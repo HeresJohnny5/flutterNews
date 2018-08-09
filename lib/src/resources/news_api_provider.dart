@@ -4,11 +4,12 @@ import 'dart:async';
 
 // LOCAL IMPORTS
 import '../models/item_model.dart';
+import 'repository.dart';
 
 // any variable declared inside a file w/out a prefixed underscore is exported and can be used by the entire app
 final _root = 'https://hacker-news.firebaseio.com/v0';
 
-class NewsApiProvider {
+class NewsApiProvider implements Source {
   Client client = Client();
 
   // whenever you use the await keyword you have to mark the enclosing function with the async keyword. 
